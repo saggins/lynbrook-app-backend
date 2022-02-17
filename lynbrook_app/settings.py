@@ -122,6 +122,8 @@ LANGUAGE_CODE = "en-us"
 
 TIME_ZONE = "America/Los_Angeles"
 
+TIME_INPUT_FORMATS= ['%H:%M',]# '14:30'
+
 USE_I18N = True
 
 USE_L10N = True
@@ -146,8 +148,8 @@ SOCIAL_AUTH_USER_MODEL = AUTH_USER_MODEL
 
 AUTHENTICATION_BACKENDS = [
     "django.contrib.auth.backends.ModelBackend",
-    "core.auth.SchoologyOAuth",
-    "core.auth.GoogleOAuth",
+   # "core.auth.SchoologyOAuth",
+   # "core.auth.GoogleOAuth",
 ]
 
 REST_FRAMEWORK = {
@@ -179,10 +181,10 @@ SOCIAL_AUTH_GOOGLE_WHITELISTED_DOMAINS = ["fuhsd.org", "student.fuhsd.org"]
 SOCIAL_AUTH_USER_FIELDS = ["email", "type"]
 SOCIAL_AUTH_USERNAME_IS_FULL_EMAIL = True
 
-SOCIAL_AUTH_GOOGLE_KEY = os.environ["GOOGLE_API_KEY"]
-SOCIAL_AUTH_GOOGLE_SECRET = os.environ["GOOGLE_API_SECRET"]
-SOCIAL_AUTH_SCHOOLOGY_KEY = os.environ["SCHOOLOGY_API_KEY"]
-SOCIAL_AUTH_SCHOOLOGY_SECRET = os.environ["SCHOOLOGY_API_SECRET"]
+# SOCIAL_AUTH_GOOGLE_KEY = os.environ["GOOGLE_API_KEY"]
+# SOCIAL_AUTH_GOOGLE_SECRET = os.environ["GOOGLE_API_SECRET"]
+# SOCIAL_AUTH_SCHOOLOGY_KEY = os.environ["SCHOOLOGY_API_KEY"]
+# SOCIAL_AUTH_SCHOOLOGY_SECRET = os.environ["SCHOOLOGY_API_SECRET"]
 
 SIMPLE_JWT = {"ACCESS_TOKEN_LIFETIME": timedelta(weeks=4)}
 
@@ -196,18 +198,19 @@ STATIC_ROOT = os.path.join(BASE_DIR, "static/")
 
 LOGIN_REDIRECT_URL = "/admin/"
 
-DEFAULT_FILE_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
-GS_BUCKET_NAME = "lynbrook-app"
-GS_PROJECT_ID = "lynbrook-high"
-GS_CREDENTIALS = Credentials.from_service_account_file(os.environ["GCS_CREDS"])
-GS_DEFAULT_ACL = "authenticatedRead"
-GS_FILE_OVERWRITE = False
+#DEFAULT_FILE_STORAGE = "storages.backends.gcloud.GoogleCloudStorage"
+# GS_BUCKET_NAME = "lynbrook-app"
+# GS_PROJECT_ID = "lynbrook-high"
+# GS_CREDENTIALS = Credentials.from_service_account_file(os.environ["GCS_CREDS"])
+# GS_DEFAULT_ACL = "authenticatedRead"
+# GS_FILE_OVERWRITE = False
 
 DATA_UPLOAD_MAX_MEMORY_SIZE = 50 * 1024 * 1024
 
 ADMINS = [
     ("Oliver Ni", "oliver.ni@gmail.com"),
     ("Joe Lin", "lin0joe24@gmail.com"),
+    ("Sangmin Chun", "sangmin@sagg.in"),
 ]
 
 SOCIAL_AUTH_PIPELINE = [
