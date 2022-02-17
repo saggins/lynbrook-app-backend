@@ -122,11 +122,7 @@ LANGUAGE_CODE = "en-us"
 
 TIME_ZONE = "America/Los_Angeles"
 
-<<<<<<< HEAD
-TIME_INPUT_FORMATS= ['%H:%M',]# '14:30'
-=======
 TIME_INPUT_FORMATS= ["%I:%M %p", "%H:%M"]
->>>>>>> master
 
 USE_I18N = True
 
